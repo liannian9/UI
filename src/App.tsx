@@ -12,7 +12,7 @@ function App() {
 
         <Button disabled>button</Button>
         <hr/>
-        <Button btnType={ButtonType.Link} href={'https://www.baidu.cn'}  size={ButtonSize.Large}>button</Button>        <hr/>
+        <Button btnType={ButtonType.Link} href={'https://www.baidu.cn'}  target="_blank" size={ButtonSize.Large}>button</Button>        <hr/>
 
         <Button btnType={ButtonType.Link} href={'https://www.baidu.cn'}  disabled size={ButtonSize.Large}>button</Button>
 

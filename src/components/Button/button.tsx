@@ -18,23 +18,26 @@ interface BaseButtonProps {
   children:React.ReactNode;
   href?:string
 }
-
-const Button : React.FC<BaseButtonProps> = function (props:BaseButtonProps) {
-  const {btnType, disabled, size, children, href} = props;
-  const classes = classNames('btn', {
+type NativeButtonProps = BaseButtonProps & React.ButtonHTMLAttributes<HTMLElement>;
+type AnchorButtonProps = BaseButtonProps & React.AnchorHTMLAttributes<HTMLElement>;
+//Partial 蒋必须属性转换为可选属性
+export type ButtonProps = Partial<NativeButtonProps & AnchorButtonProps>;
+const Button : React.FC<ButtonProps> = function (props:ButtonProps) {
+  const {btnType, disabled, size, children, className, href, ...restprops} = props;
+  const classes = classNames('btn', className, {
     [`btn-${btnType}`]:btnType,
     [`btn-${size}`]:size,
     'disabled': (btnType === ButtonType.Link) && disabled
   });
   if (btnType === ButtonType.Link && href) {
     return (
-      <a className={classes} href={href}>
+      <a className={classes} {...restprops} href={href}>
         {children}
       </a>
     )
   } else {
     return (
-      <button className={classes} disabled={disabled}>
+      <button className={classes} {...restprops} disabled={disabled}>
         {children}
       </button>
     );
