@@ -1,7 +1,11 @@
 {
   "name": "react-with-ts",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
+  "description": "test Ui",
+  "author": "zlh",
+  "keywords": ["UI"],
+  "license": "MIT",
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
@@ -18,11 +22,17 @@
     "react-scripts": "3.4.1",
     "typescript": "~3.7.2"
   },
+  "main": "dist/testUi.js",
+  "module": "dist/testUi.js",
+  "types": "dist/testUi.d.ts",
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "npm run clean && npm run build-ts && npm run build-css",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "build-ts": "tsc -p tsconfig.build.json",
+    "build-css": "node-sass ./src/styles/index.scss ./dist/index.css",
+    "clean": "rimraf ./dist"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -38,5 +48,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "rimraf": "^3.0.2"
   }
 }
