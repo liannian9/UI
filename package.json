@@ -25,6 +25,10 @@
   "main": "dist/testUi.js",
   "module": "dist/testUi.js",
   "types": "dist/testUi.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/liannian9/UI.git"
+  },
   "scripts": {
     "start": "react-scripts start",
     "build": "npm run clean && npm run build-ts && npm run build-css",
