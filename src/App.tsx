@@ -1,5 +1,5 @@
 import React from 'react';
-import Button, {ButtonType, ButtonSize} from "./components/Button/button";
+import {Button, ButtonType, ButtonSize} from "react-with-ts";
 import Menu from "./components/Menu/menu";
 import MenuItem from "./components/Menu/menuItem";
 import Alert from "./components/Alert/alert";
@@ -31,6 +31,7 @@ function App() {
       <header className="App-header">
         <Button btnType={ButtonType.Danger} size={ButtonSize.Large} disabled>button</Button>
         <hr/>
+        <Button btnType={ButtonType.Danger} size={ButtonSize.Large} disabled>button</Button>
 
         <Button btnType={ButtonType.Primary} size={ButtonSize.Small} disabled>button</Button>        <hr/>
 

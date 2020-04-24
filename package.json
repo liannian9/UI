@@ -4,7 +4,9 @@
   "private": false,
   "description": "test Ui",
   "author": "zlh",
-  "keywords": ["UI"],
+  "keywords": [
+    "UI"
+  ],
   "license": "MIT",
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
@@ -20,6 +22,7 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-scripts": "3.4.1",
+    "react-with-ts": "^0.1.0",
     "typescript": "~3.7.2"
   },
   "main": "dist/testUi.js",
@@ -29,6 +32,9 @@
     "type": "git",
     "url": "https://github.com/liannian9/UI.git"
   },
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "start": "react-scripts start",
     "build": "npm run clean && npm run build-ts && npm run build-css",
@@ -36,7 +42,8 @@
     "eject": "react-scripts eject",
     "build-ts": "tsc -p tsconfig.build.json",
     "build-css": "node-sass ./src/styles/index.scss ./dist/index.css",
-    "clean": "rimraf ./dist"
+    "clean": "rimraf ./dist",
+    "prepublishOnly": "npm run build"
   },
   "eslintConfig": {
     "extends": "react-app"
